@@ -1,4 +1,1 @@
-test: optimize async fetchData and restructure intro test suites
-
-- Refactor `fetchData` in core.test.js to use `beforeAll` for a single API call, improving test performance, and `afterAll` for cleanup.
-- Group flat "Intro: *" describe blocks into a single nested "Intro" describe block in intro.test.js for better test organization.
+test(mocking): add tests
