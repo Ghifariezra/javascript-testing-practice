@@ -1,4 +1,4 @@
-import { describe, test, it, expect } from "vitest";
+import { describe, test, it, expect, beforeAll, afterAll } from "vitest";
 import { calculateDiscount, canDrive, createProduct, fetchData, getCoupons, isPriceInRange, isStrongPassword, isValidUsername, Stack, validateUserInput } from "../src/core";
 
 describe("Core", () => {
@@ -163,21 +163,32 @@ describe("Core", () => {
     });
 
     describe("fetchData", () => {
-        it("should fetch data successfully", async () => {
-            const data = await fetchData();
+        // 1. Deklarasikan variabel di scope atas agar bisa diakses oleh semua blok 'it'
+        let data;
+
+        // 2. Gunakan beforeAll dengan async/await
+        beforeAll(async () => {
+            // Fetching hanya terjadi SATU KALI di sini
+            data = await fetchData();
+        });
+
+        afterAll(() => {
+            data = null;
+        });
+
+        // 3. Blok 'it' sekarang menjadi synchronous (tidak perlu async/await lagi)
+        it("should fetch data successfully", () => {
             expect(data).toBeInstanceOf(Array);
             expect(data.length).toBeGreaterThan(0);
         });
 
-        it("should return an array of numbers", async () => {
-            const data = await fetchData();
+        it("should return an array of numbers", () => {
             for (const item of data) {
                 expect(typeof item).toBe('number');
             }
         });
 
-        it("should return the expected data", async () => {
-            const data = await fetchData();
+        it("should return the expected data", () => {
             expect(data).toEqual([1, 2, 3]);
         });
     });
