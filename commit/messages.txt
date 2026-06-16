@@ -1,6 +1,1 @@
-chore: setup vitest environment and update project documentation
-
-- Update README.md with personal practice goals, CI/CD info, and references
-- Install vitest and add test script to package.json
-- Refactor max() function to use ternary operator in intro.js
-- Add calculateAverage() and calculateFactorial() math utility functions
+ci: drop node 18 matrix to fix vitest compatibility
