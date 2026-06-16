@@ -1,1 +1,4 @@
-ci: drop node 18 matrix to fix vitest compatibility
+ci: drop node 18 and enable verbose test reporters
+
+- Remove Node.js 18.x from matrix due to Vitest v4 compatibility issues (node:util styleText error)
+- Add --reporter=verbose and --reporter=github-actions to display detailed test logs and inline UI annotations
