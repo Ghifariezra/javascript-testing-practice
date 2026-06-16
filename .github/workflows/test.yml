@@ -1,0 +1,33 @@
+name: CI Testing
+
+on:
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                # Menggunakan versi Node.js LTS terbaru
+                node-version: [18.x, 20.x, 22.x]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: "npm" # Mengaktifkan cache npm agar build selanjutnya lebih cepat
+
+            - name: Install dependencies
+              # Menggunakan npm ci (clean install) lebih aman untuk CI karena membaca persis dari package-lock.json
+              run: npm ci
+
+            - name: Run Tests
+              run: npm run test

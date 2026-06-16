@@ -1,19 +1,47 @@
-# Mastering JavaScript Unit Testing
+# 🧪 JavaScript Unit Testing Practice
 
-This repository contains all of the examples and exercises for my JavaScript testing course.
+Sebuah repositori untuk melatih dan mendalami konsep *Unit Testing* pada JavaScript. *Codebase* awal (starter) pada repositori ini diadaptasi dari materi *JavaScript Testing* oleh Mosh Hamedani, yang kemudian saya kembangkan sebagai ruang latihan mandiri untuk menguasai pengujian perangkat lunak dan integrasi CI/CD.
 
-* Understand the fundamentals of unit testing and its significance in JavaScript development.
-* Master the setup and usage of Vitest for effective JavaScript testing.
-* Discover the best practices for writing clean, maintainable, and trustworthy tests.
-* Learn various techniques to run and debug tests effectively.
-* Explore VSCode shortcuts to boost coding productivity.
-* Master working with matchers and crafting precise, effective assertions.
-* Practice positive, negative, and boundary testing to cover a wide range of test scenarios.
-* Break dependencies in your tests with mocks.
-* Improve code quality with static analysis, including TypeScript, ESLint, and Prettier.
-* Automate code quality checks with Husky to maintain high coding standards.
+## 📌 Tujuan Pembelajaran & Latihan
 
+Repositori ini difokuskan pada praktik langsung untuk skenario pengujian dunia nyata, meliputi:
 
-You can find the full course at: 
+* **Fundamental Unit Testing:** Memahami pentingnya pengujian yang bersih, dapat dikelola, dan dapat dipercaya dalam ekosistem JavaScript.
+* **Vitest Mastery:** Konfigurasi dan penggunaan Vitest sebagai *test runner* modern yang cepat.
+* **Matchers & Assertions:** Menggunakan *matchers* untuk membuat asersi yang presisi.
+* **Test Scenarios:** Melatih teknik pengujian *positive*, *negative*, dan *boundary* (nilai batas) untuk menjangkau berbagai *edge cases*.
+* **Mocking Dependencies:** Mengisolasi fungsi yang diuji dengan melakukan *mocking* pada dependensi eksternal (seperti modul `libs/`, API, *database*, dsb).
+* **CI/CD Automation:** Mengotomatiskan proses *testing* setiap kali ada *push* atau *Pull Request* menggunakan **GitHub Actions**.
 
-https://codewithmosh.com
+## 🛠️ Teknologi yang Digunakan
+
+* **Language:** JavaScript (ES Modules)
+* **Test Runner / Framework:** [Vitest](https://vitest.dev/)
+* **Build Tool:** Vite
+* **CI/CD:** GitHub Actions
+
+## 🚀 Cara Menjalankan Project
+
+### 1. Instalasi
+Pastikan kamu sudah menginstal Node.js di sistemmu. Clone repositori ini dan jalankan perintah berikut untuk menginstal semua dependensi:
+
+```bash
+npm install
+```
+
+### 2. Pengujian
+Untuk menjalankan pengujian, jalankan perintah berikut:
+
+```bash
+npm run test
+```
+
+### 3. CI/CD
+Repositori ini sudah dilengkapi dengan GitHub Actions. Setiap kode yang di-push ke branch main akan secara otomatis memicu workflow untuk menjalankan environment Node.js, menginstal dependensi, dan menjalankan seluruh test suite untuk memastikan tidak ada kode yang error.
+
+---
+
+### 📚 Referensi & Sumber Pembelajaran
+Starter codebase dan dasar materi untuk latihan di repositori ini berasal dari:
+- Video Tutorial: [JavaScript Unit Testing Tutorial for Beginners](https://youtu.be/zuKbR4Q428o?si=-vrg5qYhOpXuar2d)
+- Original Codebase: [Mosh Hamedani](https://github.com/mosh-hamedani/javascript-testing-starter)
