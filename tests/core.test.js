@@ -1,7 +1,7 @@
 import { describe, test, it, expect, beforeAll, afterAll } from "vitest";
 import { calculateDiscount, canDrive, createProduct, fetchData, getCoupons, isPriceInRange, isStrongPassword, isValidUsername, Stack, validateUserInput } from "../src/core";
 
-describe("Core", () => {
+describe("Core Modules", () => {
     describe("getCoupons", () => {
         it("should return an array of coupons", () => {
             const coupons = getCoupons();

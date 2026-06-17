@@ -1,1 +1,7 @@
-test(mocking): add tests
+test: implement comprehensive mocking suites and add vitest ui
+
+- Add `@vitest/ui` dependency and `test:ui` script to package.json for visual testing
+- Implement full test coverage for mocking modules including shipping, analytics, payment, and email
+- Apply advanced testing concepts: interaction testing, partial mocking, and spying (`vi.spyOn`)
+- Rename root describe blocks in core and intro test files for consistency
+- Add skeleton `.todo` tests for time and date dependent functions

@@ -1,7 +1,7 @@
 import { describe, test, it, expect } from "vitest";
 import { calculateAverage, calculateFactorial, fizzBuzz, max } from "../src/intro";
 
-describe("Intro", () => {
+describe("Intro Modules", () => {
     describe("Max", () => {
         it("should return the first argument if it is greater", () => {
             // AAA Pattern
