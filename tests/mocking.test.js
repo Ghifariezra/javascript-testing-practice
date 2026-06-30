@@ -214,13 +214,47 @@ describe("Mocking Modules", () => {
         });
     });
 
-    describe.todo('isOnline', () => {
-        it('should return true if the current hour is between 8 and 20', () => {});
-        it('should return false if the current hour is not between 8 and 20', () => {});
+    describe('isOnline', () => {
+        afterEach(() => {
+            vi.useRealTimers();
+        });
+
+        it('should return true if the current hour is between 8 and 20', () => {
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2024-01-01T10:00:00'));
+
+            const result = isOnline();
+            expect(result).toBe(true);
+        });
+
+        it('should return false if the current hour is not between 8 and 20', () => {
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2024-01-01T22:00:00'));
+
+            const result = isOnline();
+            expect(result).toBe(false);
+        });
     });
 
-    describe.todo('getDiscount', () => {
-        it('should return 0 if the current date is not a weekend', () => {});
-        it('should return 0.2 if the current date is a weekend', () => {});
+    describe('getDiscount', () => {
+        afterEach(() => {
+            vi.useRealTimers();
+        });
+
+        it('should return 0.2 if the current date is Christmas Day', () => {
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2024-12-25T12:00:00'));
+
+            const result = getDiscount();
+            expect(result).toBe(0.2);
+        });
+
+        it('should return 0 if the current date is not Christmas Day', () => {
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date('2024-01-01T12:00:00'));
+
+            const result = getDiscount();
+            expect(result).toBe(0);
+        });
     });
 });

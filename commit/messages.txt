@@ -1,5 +1,5 @@
-docs: add test case specifications and update README
+test: implement fake timers for date-dependent modules
 
-- Added comprehensive test case documentation in docs/ for intro, core, and mocking modules.
-- Updated README.md to include directory structure and links to test cases.
-- Fixed missing EOF newline in security.js and mocking.js.
+- Implemented vi.useFakeTimers() and vi.setSystemTime() for isOnline and getDiscount test suites.
+- Removed .todo status from date-dependent tests.
+- Cleaned up localized comments in GitHub Actions test workflow.
