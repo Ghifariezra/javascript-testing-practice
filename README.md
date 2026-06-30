@@ -13,12 +13,26 @@ Repositori ini difokuskan pada praktik langsung untuk skenario pengujian dunia n
 * **Mocking Dependencies:** Mengisolasi fungsi yang diuji dengan melakukan *mocking* pada dependensi eksternal (seperti modul `libs/`, API, *database*, dsb).
 * **CI/CD Automation:** Mengotomatiskan proses *testing* setiap kali ada *push* atau *Pull Request* menggunakan **GitHub Actions**.
 
-## 🛠️ Teknologi yang Digunakan
+## 📂 Dokumentasi Skenario Uji (Test Cases)
 
-* **Language:** JavaScript (ES Modules)
-* **Test Runner / Framework:** [Vitest](https://vitest.dev/)
-* **Build Tool:** Vite
-* **CI/CD:** GitHub Actions
+Selain kode sumber, repositori ini juga memuat spesifikasi dan dokumentasi skenario uji lengkap dengan pendekatan arsitektur AAA (*Arrange, Act, Assert*). Seluruh rekapitulasi pengujian terdokumentasi di dalam direktori `docs/`:
+
+* 📄 [`TESTCASE_INTRO.md`](./docs/TESTCASE_INTRO.md) — Spesifikasi pengujian untuk fungsi-fungsi dasar dan utilitas matematika (`src/intro.js`).
+* 📄 [`TESTCASE_CORE.md`](./docs/TESTCASE_CORE.md) — Spesifikasi pengujian logika inti bisnis, *asynchronous data fetching*, struktur data *Stack* (OOP), dan validasi objek (`src/core.js`).
+* 📄 [`TESTCASE_MOCKING.md`](./docs/TESTCASE_MOCKING.md) — Spesifikasi pengujian tingkat lanjut yang melibatkan *mocking* dan *spying* pada dependensi modul eksternal (`src/mocking.js`).
+
+## 📁 Struktur Direktori
+
+```text
+.
+├── .github/          # Konfigurasi workflow CI/CD (GitHub Actions)
+├── docs/             # Dokumentasi spesifikasi Test Case
+├── src/              # Source code utama (intro, core, mocking)
+│   └── libs/         # Modul dependensi eksternal (analytics, payment, dll)
+├── tests/            # Berkas pengujian unit (vitest)
+├── package.json      # Konfigurasi dependensi project & NPM scripts
+└── README.md         # Dokumentasi repositori utama
+```
 
 ## 🚀 Cara Menjalankan Project
 
